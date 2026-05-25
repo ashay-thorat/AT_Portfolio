@@ -1,0 +1,388 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ============================================================
+   PROFESSIONAL TECH DESIGN SYSTEM — Zinc & Azure Blue
+   ============================================================ */
+:root {
+  /* ── Backgrounds ── */
+  --bg-base:        #09090b; /* Zinc 950 */
+  --bg-raised:      #18181b; /* Zinc 900 */
+  --bg-surface:     #27272a; /* Zinc 800 */
+  --bg-elevated:    #3f3f46; /* Zinc 700 */
+  --bg-glass:       rgba(24, 24, 27, 0.45);
+  --bg-glass-hover: rgba(39, 39, 42, 0.6);
+
+  /* ── Professional Accents ── */
+  --accent-primary:   #3b82f6; /* Blue 500 */
+  --accent-secondary: #6366f1; /* Indigo 500 */
+  --accent-light:     #60a5fa; /* Blue 400 */
+  --accent-glow:      rgba(59, 130, 246, 0.3);
+  --accent-glow-subtle: rgba(59, 130, 246, 0.15);
+
+  /* ── Text ── */
+  --text-primary:   #fafafa; /* Zinc 50 */
+  --text-secondary: #d4d4d8; /* Zinc 300 */
+  --text-muted:     #a1a1aa; /* Zinc 400 */
+  --text-faint:     #71717a; /* Zinc 500 */
+
+  /* ── Borders ── */
+  --border-subtle:  rgba(255, 255, 255, 0.05);
+  --border-light:   rgba(255, 255, 255, 0.1);
+  --border-medium:  rgba(255, 255, 255, 0.2);
+  --border-strong:  rgba(59, 130, 246, 0.4);
+
+  /* ── Glows ── */
+  --glow-sm:   0 0 15px var(--accent-glow-subtle);
+  --glow-md:   0 0 30px var(--accent-glow);
+  --glow-lg:   0 8px 32px rgba(0, 0, 0, 0.4);
+  --glow-hero: 0 0 80px var(--accent-glow-subtle);
+
+  /* ── Functional Aliases ── */
+  --color-primary:       #ffffff;
+  --color-primary-light: var(--text-secondary);
+  --color-secondary:     var(--accent-primary);
+  --color-accent:        var(--accent-secondary);
+  --color-bg-dark:       var(--bg-base);
+  --color-bg-card:       var(--bg-glass);
+  --color-bg-glass:      var(--bg-glass);
+  --color-text-primary:  var(--text-primary);
+  --color-text-secondary:var(--text-secondary);
+  --color-border-glass:  var(--border-subtle);
+  --color-glow-primary:  var(--accent-glow);
+  --color-glow-secondary:rgba(99, 102, 241, 0.3);
+
+  /* ── Legacy Neon Aliases (for backward compatibility during migration) ── */
+  --neon-cyan:      var(--accent-primary);
+  --neon-purple:    var(--accent-secondary);
+  --neon-pink:      #f43f5e;
+  --neon-cyan-glow: var(--accent-glow);
+  --neon-purple-glow: var(--color-glow-secondary);
+
+  /* ── Typography ── */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-light); }
+
+/* Selection */
+::selection { background: var(--accent-glow); color: #fff; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   GRADIENT TEXT
+   ============================================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--accent-light) 40%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   GLASSMORPHISM
+   ============================================================ */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+}
+.glass-strong {
+  background: rgba(12, 12, 16, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-medium);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ============================================================
+   GLOW UTILITIES
+   ============================================================ */
+.glow-text {
+  text-shadow: 0 0 15px var(--accent-glow);
+}
+.glow-box  { box-shadow: var(--glow-md); }
+.glow-border {
+  box-shadow: 0 0 0 1px var(--border-strong), 0 0 20px var(--accent-glow-subtle);
+}
+
+/* ============================================================
+   BUTTONS — Apple / Tesla inspired
+   ============================================================ */
+
+/* Primary — Accent pill */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 36px;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px var(--accent-glow-subtle);
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 12px 30px var(--accent-glow);
+  transform: translateY(-3px) scale(1.02);
+}
+.btn-primary:active { transform: translateY(-1px) scale(0.98); }
+
+/* Outline — minimal border */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 34px;
+  background: transparent;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  background: rgba(255,255,255,0.045);
+  border-color: var(--border-light);
+  box-shadow: var(--glow-sm);
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section-heading {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+.section-subheading {
+  font-size: clamp(0.9rem, 2vw, 1.08rem);
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   BACKGROUND LAYERS
+   ============================================================ */
+
+/* Subtle dot-grid */
+.bg-grid {
+  position: fixed; inset: 0; z-index: -2;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%);
+}
+
+/* Film-grain noise for premium texture */
+.bg-noise {
+  position: fixed; inset: 0; z-index: -1;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; box-shadow: 0 0 8px rgba(255,255,255,0.2); }
+  50%       { opacity: 1;   box-shadow: 0 0 20px rgba(255,255,255,0.5); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(255,255,255,0.08); }
+  50%       { border-color: rgba(255,255,255,0.25); }
+}
+
+.animate-float         { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 6s ease-in-out 2s infinite; }
+.animate-pulse-glow    { animation: pulse-glow 2.5s ease-in-out infinite; }
+.animate-border-glow   { animation: borderGlow 3s ease-in-out infinite; }
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.03) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+@media (max-width: 768px) {
+  .container-main { padding: 0 16px; }
+}
+
+/* Divider */
+.section-divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+/* Tag chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem; font-weight: 600; font-family: var(--font-body);
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+.chip:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+/* ============================================================
+   FORM INPUTS
+   ============================================================ */
+.input-dark {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.input-dark:focus {
+  border-color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 4px var(--accent-glow-subtle);
+}
+.input-dark::placeholder { color: var(--text-faint); }
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+.cursor-dot {
+  position: fixed; top: 0; left: 0;
+  width: 6px; height: 6px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+}
+.cursor-ring {
+  position: fixed; top: 0; left: 0;
+  width: 34px; height: 34px;
+  border: 1px solid var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1), height 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s ease;
+  background: var(--accent-glow-subtle);
+}
+@media (max-width: 768px), (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
