@@ -5,13 +5,18 @@ import { fadeIn, staggerContainer } from '../../utils/motion';
 import { WordReveal } from '../ui/TextReveal';
 import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa';
 
+import awsImage from '../../assets/images/aws.png';
+import androidImage from '../../assets/images/android.png';
+import redhatImage from '../../assets/images/redhat.png';
+import redhatOpenshiftImage from '../../assets/images/redhatopenshift.png';
+
 const certificates = [
   {
     title: 'AWS Academy Graduate - Cloud Architecting',
     issuer: 'AWS Academy',
     date: 'April 2026',
     url: '#',
-    image: 'src/assets/images/aws.png',
+    image: awsImage,
     skills: ['Cloud Architecture', 'AWS', 'Networking', 'Security']
   },
   {
@@ -19,7 +24,7 @@ const certificates = [
     issuer: 'AWS Academy',
     date: 'April 2026',
     url: '#',
-    image: 'src/assets/images/aws.png',
+    image: awsImage,
     skills: ['Cloud Basics', 'AWS', 'Infrastructure', 'Cloud Computing']
   },
   {
@@ -27,7 +32,7 @@ const certificates = [
     issuer: 'Mountreach Solution Pvt Ltd',
     date: 'July 2024',
     url: '#',
-    image: 'src/assets/images/android.png',
+    image: androidImage,
     skills: ['Android Development', 'Java', 'Mobile Apps']
   },
   {
@@ -35,7 +40,7 @@ const certificates = [
     issuer: 'Simplilearn',
     date: 'June 2026',
     url: '#',
-    image: 'src/assets/images/aws.png',
+    image: awsImage,
     skills: ['AWS', 'Cloud Basics']
   },
   {
@@ -43,7 +48,7 @@ const certificates = [
     issuer: 'Red Hat',
     date: 'March 2026',
     url: '#',
-    image: 'src/assets/images/redhat.png',
+    image: redhatImage,
     skills: ['Linux', 'System Administration', 'Command Line']
   },
   {
@@ -51,7 +56,7 @@ const certificates = [
     issuer: 'Red Hat',
     date: 'March 2026',
     url: '#',
-    image: 'src/assets/images/redhatopenshift.png',
+    image: redhatOpenshiftImage,
     skills: ['OpenShift', 'Kubernetes', 'Containers']
   }
 ];
