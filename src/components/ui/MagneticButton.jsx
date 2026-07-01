@@ -52,21 +52,24 @@ const MagneticButton = ({
   const Tag = motion[as] || motion.div;
 
   return (
-    <Tag
+    <div
       ref={ref}
-      className={className}
-      style={{
-        ...style,
-        display: style.display || 'inline-block',
-        x: springX,
-        y: springY,
-      }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
+      style={{ display: style.display || 'inline-block', ...style }}
+      className={className}
     >
-      {children}
-    </Tag>
+      <Tag
+        style={{
+          display: 'inline-block',
+          x: springX,
+          y: springY,
+        }}
+      >
+        {children}
+      </Tag>
+    </div>
   );
 };
 

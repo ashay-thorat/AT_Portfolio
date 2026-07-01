@@ -25,14 +25,14 @@ export const CharReveal = ({
       {text.split('').map((char, i) => (
         <motion.span
           key={i}
-          initial={{ y: 40, opacity: 0, filter: 'blur(4px)' }}
-          animate={isInView ? { y: 0, opacity: 1, filter: 'blur(0px)' } : {}}
+          initial={{ y: 40, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{
             duration,
             delay: delay + i * stagger,
             ease: [0.25, 0.4, 0, 1],
           }}
-          style={{ display: 'inline-block', willChange: 'transform, opacity, filter' }}
+          style={{ display: 'inline-block', willChange: 'transform, opacity' }}
           aria-hidden="true"
         >
           {char === ' ' ? '\u00A0' : char}

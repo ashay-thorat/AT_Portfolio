@@ -74,17 +74,38 @@ const CustomCursor = () => {
       <div ref={dotRef} className="cursor-dot" />
       <div ref={ringRef} className="cursor-ring" />
       <style>{`
+        .cursor-dot, .cursor-ring {
+          position: fixed;
+          top: 0;
+          left: 0;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          z-index: 9999;
+          pointer-events: none;
+          transition: width 0.3s, height 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+        .cursor-dot {
+          width: 8px;
+          height: 8px;
+          background: var(--text-primary);
+        }
+        .cursor-ring {
+          width: 32px;
+          height: 32px;
+          border: 1px solid var(--text-primary);
+          opacity: 0.5;
+        }
         .cursor-dot.cursor-hover {
           width: 12px;
           height: 12px;
-          background: #ffffff;
-          box-shadow: 0 0 12px rgba(255,255,255,0.8);
+          background: var(--accent-primary);
+          box-shadow: 0 0 12px var(--accent-glow);
         }
         .cursor-ring.cursor-hover {
           width: 48px;
           height: 48px;
-          border-color: rgba(255,255,255,0.55);
-          box-shadow: 0 0 14px rgba(255,255,255,0.15);
+          border-color: rgba(225,29,72,0.55);
+          box-shadow: 0 0 14px var(--accent-glow-subtle);
         }
       `}</style>
     </>

@@ -8,6 +8,10 @@ import {
   SiGraphql, SiRedux, SiVite, SiVercel
 } from 'react-icons/si';
 
+import eduaiImage from '../assets/images/ai-education.png';
+import smarthireImage from '../assets/images/smarthire.png';
+import ecommerce from '../assets/images/ecommerceweb.png';
+
 /* ─────────────────────────────────────────
    All color values are now monochrome:
    white (#ffffff) or grey shades only.
@@ -18,6 +22,8 @@ export const navLinks = [
   { id: 'about', title: 'About' },
   { id: 'skills', title: 'Skills' },
   { id: 'projects', title: 'Projects' },
+  { id: 'certificates', title: 'Certificates' },
+  { id: 'education', title: 'Education' },
   { id: 'experience', title: 'Experience' },
   { id: 'contact', title: 'Contact' },
 ];
@@ -77,19 +83,27 @@ export const skills = {
 export const projects = [
   {
     title: 'EduAI — AI-Powered Smart Learning Platform',
+    image: eduaiImage,
     description: 'A full-stack EdTech platform with AI-driven course generation, interactive tutoring, and visual doubt solving. Students get personalized quizzes, smart notes, and gamified streaks. Instructors can build courses manually or let AI auto-generate entire syllabi. Built with offline-resilient AI fallbacks for 100% uptime.',
     tags: ['Next.js', 'Express', 'Typescript', 'Neon PostgreSQL', 'Firebase Auth', 'Prisma', 'Gemini'],
-    category: 'Full Stack',
-    github: 'https://github.com/Ashay1111-at/Ai-powered-Educational-Platform',
+    github: 'https://github.com/ashay-thorat/Ai-powered-Educational-Platform',
     live: 'https://ai-powered-educational-platform.vercel.app/',
   },
   {
     title: 'SmartHire —AI-powered Job Platform',
+    image: smarthireImage,
     description: 'Candidates upload resumes for AI-driven job matching and recommendations. Recruiters post jobs, score applicants across 4 AI dimensions (Skills, Experience, Education, ATS), and manage their pipeline via a Kanban board. Admin tools provide user management and analytics. Built with React 19, Express, PostgreSQL — deployed on Vercel + Render',
     tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'Neon PostgreSQL (Serverless)', 'Firebase', 'Jwt', 'RapidAPI'],
-    category: 'Full Stack',
-    github: 'https://github.com/Ashay1111-at/SmartHire',
+    github: 'https://github.com/ashay-thorat/SmartHire',
     live: 'https://smart-hire-omega-five.vercel.app/',
+  },
+  {
+    title: 'ShopHub - E-Commerce Platform',
+    image: ecommerce,
+    description: 'A full-stack MERN e-commerce application with JWT authentication, product browsing, shopping cart, secure checkout, and Razorpay payment integration.Includes user features like profile management, order tracking, reviews, password reset, and a responsive shopping experience.Features a comprehensive admin dashboard for managing products, orders, users, Cloudinary image uploads, and sales analytics.',
+    tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'Mongodb'],
+    github: 'https://github.com/ashay-thorat/E-commerce-web',
+    live: 'https://codesoft-e-commerce-web.vercel.app/',
   },
 ];
 
@@ -98,17 +112,37 @@ export const experiences = [
   {
     title: 'Android Developer Trainee',
     company: 'Mountreach Solution Pvt.ltd.',
-    date: 'Jan 2024 — Present',
+    date: 'June 2024 - July 2024',
     points: [
       'Gained hands-on experience in Android app development using Java, Android Studio, and Android SDK to build responsive applications.',
       'Implemented user authentication, REST API integration, local storage, and Material Design UI components.',
       'Improved app performance through debugging, code optimization, and memory management.',
     ],
   },
+  {
+    title: 'Web Development Intern ',
+    company: 'CODSOFT.',
+    date: 'June 2026 — July 2026',
+    points: [
+      'Successfully completed a Web Development Internship at CODSOFT, working on real-world web development projects.',
+      'Strengthened my full-stack development skills by building applications using React.js and Node.js while following industry-standard development practices.',
+      'Gained hands-on experience that bridged the gap between academic knowledge and professional software development, enhancing my problem-solving and collaboration skills.',
+    ],
+  },
+  {
+    title: 'Backend AI Engineering Intern ',
+    company: 'FlyRank AI',
+    date: 'July 2026 present',
+    points: [
+      'Selected as a Backend AI Engineering Intern at FlyRank AI, contributing to AI-driven backend development and scalable software solutions.',
+      'Working with backend technologies, AI workflows, and modern development practices while gaining hands-on experience in real-world engineering projects.',
+      'Collaborating with the engineering team to build, learn, and enhance AI-powered applications, strengthening my skills in backend development and machine learning.',
+    ],
+  },
 ];
 
 export const socialLinks = [
-  { platform: 'GitHub', url: 'https://github.com/Ashay1111-at', icon: FaGithub },
+  { platform: 'GitHub', url: 'https://github.com/ashay-thorat', icon: FaGithub },
   { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/ashay-thorat-37612025a/', icon: FaLinkedin },
 ];
 

@@ -1,39 +1,35 @@
-import { useState, useCallback } from 'react';
 import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
+import Certificates from './components/sections/Certificates';
+import Education from './components/sections/Education';
 import Contact from './components/sections/Contact';
 import CustomCursor from './components/ui/CustomCursor';
-import Loader from './components/ui/Loader';
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-
-  const handleLoadComplete = useCallback(() => {
-    setLoading(false);
-  }, []);
-
   return (
     <>
-      {loading && <Loader onComplete={handleLoadComplete} />}
       <CustomCursor />
-      {/* Ambient background layers */}
+      
+      {/* Global Background Layers */}
       <div className="bg-grid" />
       <div className="bg-noise" />
+      <div className="ambient-glow" />
+      
       <Navbar />
-      <main>
+      <main style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: '1440px', margin: '0 auto', padding: '0 5vw' }}>
         <Hero />
         <About />
         <Skills />
         <Projects />
+        <Certificates />
+        <Education />
         <Experience />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 };
