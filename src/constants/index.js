@@ -11,6 +11,7 @@ import {
 import eduaiImage from '../assets/images/ai-education.png';
 import smarthireImage from '../assets/images/smarthire.png';
 import ecommerce from '../assets/images/ecommerceweb.png';
+import apextask from '../assets/images/apextask.png';
 
 /* ─────────────────────────────────────────
    All color values are now monochrome:
@@ -96,6 +97,14 @@ export const projects = [
     tags: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'Neon PostgreSQL (Serverless)', 'Firebase', 'Jwt', 'RapidAPI'],
     github: 'https://github.com/ashay-thorat/SmartHire',
     live: 'https://smart-hire-omega-five.vercel.app/',
+  },
+  {
+    title: 'ApexTask - Project Management Tool',
+    image: apextask,
+    description: 'A modern full-stack Kanban-style project management application built for teams. Features Firebase authentication with Email/Password and Google Sign-In, interactive drag-and-drop task management with optimistic UI updates, workspace-based collaboration, task assignment, real-time notifications, and a responsive dark/light mode interface. Built with React, TypeScript, Node.js, Express, Prisma ORM, and Neon PostgreSQL.',
+    tags: ['React','TypeScript', 'Tailwind CSS',  'Node.js',  'Express',  'Prisma',  'PostgreSQL(Neon serverless)',  'Firebase',  'Zustand'],
+    github: 'https://github.com/ashay-thorat/ApexTask-Project-management-tool',
+    live: 'https://apex-task-project-management-tool-f.vercel.app/',
   },
   {
     title: 'ShopHub - E-Commerce Platform',
