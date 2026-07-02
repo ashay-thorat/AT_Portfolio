@@ -144,9 +144,9 @@ const Hero = () => {
                 </button>
               </MagneticButton>
               <MagneticButton>
-                <button className="btn-outline" onClick={() => window.open('/resume.pdf', '_blank')} style={{ fontSize: '1.1rem', padding: '16px 32px' }}>
+                <a className="btn-outline" href="/resume.pdf" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', fontSize: '1.1rem', padding: '16px 32px', textDecoration: 'none' }}>
                   Resume
-                </button>
+                </a>
               </MagneticButton>
               <MagneticButton>
                 <button className="btn-outline" onClick={() => handleScroll('contact')} style={{ fontSize: '1.1rem', padding: '16px 32px' }}>
