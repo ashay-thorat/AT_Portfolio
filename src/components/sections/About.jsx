@@ -5,7 +5,7 @@ import { aboutData } from '../../constants';
 import { fadeIn } from '../../utils/motion';
 import { WordReveal, BlurReveal } from '../ui/TextReveal';
 import AnimatedCounter from '../ui/AnimatedCounter';
-import aboutImg from '../../assets/photo.png'; // Reusing profile image for now
+import aboutImg from '../../assets/photo.jpg'; // Reusing profile image for now
 
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiJavascript, SiTypescript } from 'react-icons/si';
