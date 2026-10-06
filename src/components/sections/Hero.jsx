@@ -4,7 +4,7 @@ import { fadeIn } from '../../utils/motion';
 import { HiArrowDown } from 'react-icons/hi';
 import { CharReveal, WordReveal } from '../ui/TextReveal';
 import MagneticButton from '../ui/MagneticButton';
-import profileImg from '../../assets/photo.png';
+import profileImg from '../../assets/photo.jpg';
 
 const Hero = () => {
   const handleScroll = (id) => {
